@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Layout, Server, Database, Monitor, Braces, Wind, Zap, Code, Terminal, 
   Cpu, Globe, Lock, FolderOpen, ShieldCheck, Flame, CreditCard, GitBranch, 
-  ChevronRight, ExternalLink, Award, CheckCircle2
+  ChevronRight, ExternalLink, Award, CheckCircle2, Rocket
 } from 'lucide-react';
 
 const skillsData = [
@@ -62,6 +62,32 @@ const skillsData = [
           "Integrated environment variable management"
         ],
         level: "Intermediate"
+      },
+      { 
+        title: "CSS3", 
+        icon: <Code className="text-[#1572B6]" size={24} />,
+        description: "Modern styling language for web applications, focusing on layout, typography, and visual polish.",
+        project: "Extensively used for custom glassmorphism and animations in this portfolio.",
+        tech: "Flexbox, CSS Grid, Transitions, Variables",
+        achievements: [
+          "Built high-performance custom animations",
+          "Mastered advanced layout techniques without frameworks",
+          "Engineered reusable design tokens and global styles"
+        ],
+        level: "Expert"
+      },
+      { 
+        title: "HTML5", 
+        icon: <Globe className="text-[#E34F26]" size={24} />,
+        description: "Standard markup language for creating web pages with a focus on semantic structure and SEO.",
+        project: "Foundational structure for all web applications, including this portfolio.",
+        tech: "Semantic HTML, Web APIs, SEO Best Practices",
+        achievements: [
+          "Implemented semantic markup for improved accessibility",
+          "Optimized SEO scores through proper structural hierarchy",
+          "Integrated local storage and other Web APIs seamlessly"
+        ],
+        level: "Expert"
       }
     ]
   },
@@ -208,27 +234,36 @@ const SkillCard = ({ skill, isSelected, onClick }) => (
 
 const SkillDetail = ({ skill }) => (
   <motion.div
-    initial={{ opacity: 0, x: 20 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: -20 }}
-    transition={{ duration: 0.4, ease: "easeOut" }}
-    className="glass-premium rounded-3xl border border-white/10 p-8 md:p-10 relative overflow-hidden shadow-2xl h-full flex flex-col"
+    initial={{ opacity: 0, x: 50, scale: 0.95 }}
+    animate={{ opacity: 1, x: 0, scale: 1 }}
+    exit={{ opacity: 0, x: -50, scale: 0.95 }}
+    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    className="glass-premium rounded-[2rem] border border-white/10 p-8 md:p-12 relative overflow-hidden shadow-2xl h-full flex flex-col"
   >
-    {/* Decorative Background Blob */}
-    <div className="absolute top-0 right-0 w-64 h-64 bg-pblue/10 blur-[100px] rounded-full -mr-20 -mt-20 pointer-events-none"></div>
+    {/* Dynamic Background Glow */}
+    <div className="absolute top-0 right-0 w-80 h-80 bg-pblue/15 blur-[120px] rounded-full -mr-32 -mt-32 pointer-events-none animate-pulse"></div>
+    <div className="absolute bottom-0 left-0 w-64 h-64 bg-pcyan/10 blur-[100px] rounded-full -ml-20 -mb-20 pointer-events-none"></div>
     
-    <div className="relative z-10 space-y-8 flex-1 overflow-y-auto custom-scrollbar pr-2">
+    <div className="relative z-10 space-y-10 flex-1 overflow-y-auto custom-scrollbar pr-4">
       {/* Header */}
-      <div className="flex items-start justify-between gap-6">
-        <div className="flex items-center gap-6">
-          <div className="p-5 bg-white/5 rounded-3xl border border-white/10 shadow-inner">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div className="flex items-center gap-8">
+          <motion.div 
+            initial={{ scale: 0.8, rotate: -10 }}
+            animate={{ scale: 1, rotate: 0 }}
+            className="p-6 bg-gradient-to-br from-white/10 to-white/5 rounded-[2rem] border border-white/10 shadow-2xl backdrop-blur-3xl"
+          >
             {skill.icon}
-          </div>
+          </motion.div>
           <div>
-            <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-none mb-3">{skill.title}</h3>
-            <div className="flex items-center gap-2">
-              <Award size={14} className="text-pcyan" />
-              <span className="text-[11px] uppercase tracking-[0.2em] text-pcyan font-bold">{skill.level} Proficiency</span>
+            <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-3">
+              {skill.title}
+            </h3>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 px-3 py-1 bg-pcyan/10 border border-pcyan/20 rounded-full">
+                <Award size={14} className="text-pcyan" />
+                <span className="text-[10px] uppercase tracking-[0.2em] text-pcyan font-bold">{skill.level} Proficiency</span>
+              </div>
             </div>
           </div>
         </div>
@@ -236,57 +271,87 @@ const SkillDetail = ({ skill }) => (
 
       {/* Description Area */}
       <div className="space-y-4">
-        <div className="inline-block px-3 py-1 rounded-lg bg-white/5 border border-white/10">
-          <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">About the Skill</span>
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
+          <Flame size={12} className="text-amber-400" />
+          <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Expertise Overview</span>
         </div>
-        <p className="text-gray-300 text-lg leading-relaxed font-inter">
+        <p className="text-gray-300 text-xl leading-relaxed font-light">
           {skill.description}
         </p>
       </div>
 
       {/* Info Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4">
-        <div className="space-y-3">
-          <h5 className="text-[11px] uppercase tracking-widest text-pcyan font-bold flex items-center gap-2">
-            <ExternalLink size={12} /> Real Project Usage
-          </h5>
-          <p className="text-sm text-white/90 font-medium leading-normal bg-white/5 p-4 rounded-2xl border border-white/5">
-            {skill.project}
-          </p>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="space-y-4 group"
+        >
+          <div className="flex items-center gap-3 text-pcyan">
+            <Rocket size={14} className="animate-bounce" />
+            <h5 className="text-[11px] uppercase tracking-widest font-bold">Real-World Impact</h5>
+          </div>
+          <div className="p-6 bg-white/5 rounded-3xl border border-white/5 group-hover:border-pcyan/30 transition-colors duration-500 shadow-xl">
+             <p className="text-sm text-gray-200 font-medium leading-relaxed italic">
+              "{skill.project}"
+            </p>
+          </div>
+        </motion.div>
 
-        <div className="space-y-3">
-          <h5 className="text-[11px] uppercase tracking-widest text-pblue font-bold flex items-center gap-2">
-            <Code size={12} /> Key Technologies
-          </h5>
-          <p className="text-sm text-white/90 font-medium leading-normal bg-white/5 p-4 rounded-2xl border border-white/5">
-            {skill.tech}
-          </p>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="space-y-4 group"
+        >
+          <div className="flex items-center gap-3 text-pblue">
+            <Cpu size={14} className="animate-pulse" />
+            <h5 className="text-[11px] uppercase tracking-widest font-bold">Key Technologies</h5>
+          </div>
+          <div className="p-6 bg-white/5 rounded-3xl border border-white/5 group-hover:border-pblue/30 transition-colors duration-500 shadow-xl">
+             <p className="text-sm text-gray-200 font-medium leading-relaxed tracking-wide">
+              {skill.tech}
+            </p>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Achievements */}
-      <div className="space-y-4 p-6 bg-white/5 rounded-3xl border border-white/10 shadow-lg">
-        <h5 className="text-[11px] uppercase tracking-widest text-green-400 font-bold flex items-center gap-2 mb-2">
-          <Zap size={12} /> Key Achievements / Contributions
-        </h5>
-        <div className="grid gap-3">
-          {skill.achievements.map((item, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              className="flex items-start gap-4"
-            >
-              <div className="mt-1.5">
-                <CheckCircle2 size={14} className="text-green-500" />
-              </div>
-              <p className="text-[14px] text-gray-300 leading-snug">{item}</p>
-            </motion.div>
-          ))}
+      {/* Achievements Card */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="relative group mt-4 overflow-hidden rounded-[2.5rem] p-1 bg-gradient-to-br from-white/10 via-transparent to-white/10"
+      >
+        <div className="bg-[#0D121F] p-8 md:p-10 rounded-[2.4rem] space-y-6 relative z-10">
+          <div className="flex items-center justify-between mb-2">
+            <h5 className="text-[11px] uppercase tracking-widest text-green-400 font-bold flex items-center gap-3">
+              <CheckCircle2 size={16} /> Professional Milestones
+            </h5>
+            <div className="flex gap-1">
+              {[1, 2, 3].map(i => <div key={i} className="w-1 h-1 rounded-full bg-white/20" />)}
+            </div>
+          </div>
+          
+          <div className="grid gap-4">
+            {skill.achievements.map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, x: -15 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 + (idx * 0.1) }}
+                className="flex items-center gap-5 p-4 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent hover:border-white/5"
+              >
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center border border-green-500/20">
+                  <CheckCircle2 size={14} className="text-green-500" />
+                </div>
+                <p className="text-[15px] text-gray-300 font-medium leading-relaxed">{item}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   </motion.div>
 );
@@ -311,7 +376,9 @@ const Skills = () => {
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-pblue/10 border border-pblue/20 backdrop-blur-md">
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-pblue">Mastery & Experience</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-white italic">Technical <span className="text-gradient">Proficiency</span></h2>
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-white italic pr-4 pb-4">
+            Technical <span className="text-gradient pr-6 pb-1">Proficiency</span>
+          </h2>
           <p className="max-w-3xl mx-auto text-gray-400 text-xl leading-relaxed font-light">
             An in-depth look at my professional skill set, illustrating complex problem solving and real-world impact across various tech landscapes.
           </p>
@@ -353,24 +420,76 @@ const Skills = () => {
               ) : (
                 <motion.div
                   key="empty-state"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  className="glass-premium rounded-3xl border border-white/5 p-12 h-full flex flex-col items-center justify-center text-center space-y-6 min-h-[600px]"
+                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, x: -50 }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  className="glass-premium rounded-[3rem] border border-white/10 p-12 h-full flex flex-col items-center justify-center text-center space-y-10 min-h-[600px] relative overflow-hidden"
                 >
-                  <div className="p-8 bg-pblue/5 rounded-full border border-pblue/10 animate-float">
-                    <Braces size={60} className="text-pblue/40" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-white tracking-tight">Explore My Technical Arsenal</h3>
-                    <p className="text-gray-400 max-w-xs mx-auto leading-relaxed">
-                      Select a technical skill from the left to dive deep into my professional expertise and real-world impact.
-                    </p>
-                  </div>
-                  <div className="flex gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-pblue/50"></div>
-                    <div className="w-1.5 h-1.5 rounded-full bg-pcyan/50"></div>
-                    <div className="w-1.5 h-1.5 rounded-full bg-pblue/50"></div>
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-pblue/5 via-dark to-pcyan/5 opacity-40"></div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-pblue/10 blur-[120px] rounded-full"></div>
+                  
+                  <div className="relative z-10 space-y-10 group">
+                    <motion.div 
+                      animate={{ 
+                        y: [0, -20, 0],
+                        rotate: [0, 5, -5, 0],
+                        scale: [1, 1.05, 1]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 6, 
+                        ease: "easeInOut" 
+                      }}
+                      className="relative inline-block"
+                    >
+                      <div className="p-10 bg-white/5 rounded-full border border-white/10 shadow-2xl backdrop-blur-3xl relative">
+                        <div className="absolute -inset-4 bg-gradient-to-r from-pblue to-pcyan rounded-full blur opacity-20 animate-pulse"></div>
+                        <Cpu size={80} className="text-pcyan/60 group-hover:text-pcyan transition-colors duration-500" />
+                      </div>
+                    </motion.div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
+                        Explore My <span className="text-transparent bg-clip-text bg-gradient-to-r from-pblue to-pcyan">Technical Arsenal</span>
+                      </h3>
+                      <p className="text-gray-400 max-w-sm mx-auto text-lg leading-relaxed font-light">
+                        Select a technical skill from the left to dive into my professional expertise and real-world impact.
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-6">
+                      {/* Premium Dots Loader */}
+                      <div className="flex gap-2.5">
+                        {[0, 0.2, 0.4].map((delay, i) => (
+                          <motion.div
+                            key={i}
+                            animate={{ 
+                              scale: [1, 1.5, 1],
+                              opacity: [0.3, 1, 0.3] 
+                            }}
+                            transition={{ 
+                              repeat: Infinity, 
+                              duration: 1.5, 
+                              delay,
+                              ease: "easeInOut" 
+                            }}
+                            className={`w-2.5 h-2.5 rounded-full ${i === 1 ? 'bg-pcyan' : 'bg-pblue'}`}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Click Indicator Tooltip */}
+                      <motion.div 
+                        animate={{ x: [-5, 5, -5] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                        className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-[10px] text-gray-400 font-bold uppercase tracking-widest backdrop-blur-md"
+                      >
+                        <ChevronRight size={12} className="text-pblue rotate-180" />
+                        Click a skill to start
+                      </motion.div>
+                    </div>
                   </div>
                 </motion.div>
               )}

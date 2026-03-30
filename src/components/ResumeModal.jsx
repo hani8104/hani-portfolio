@@ -54,7 +54,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
 
               <div className="flex items-center gap-4">
                 <a
-                  href="/resume.pdf"
+                  href="/Resume.pdf"
                   download="Hani_Pathak_Resume.pdf"
                   className="flex items-center gap-2 text-xs font-medium bg-pblue/20 text-pcyan px-3 py-1.5 rounded-full hover:bg-pblue/30 transition-colors"
                   title="Download PDF"
@@ -76,12 +76,12 @@ const ResumeModal = ({ isOpen, onClose }) => {
             {/* Resume Viewer */}
             <div className="flex-1 bg-white/5 relative overflow-hidden">
               <iframe
-                src="/resume.pdf#toolbar=0"
+                src="/Resume.pdf#toolbar=0"
                 className="w-full h-full border-none"
                 title="Hani Pathak Resume"
               >
                 <p>Your browser does not support iframes.
-                  <a href="/resume.pdf">Download to view</a>
+                  <a href="/Resume.pdf">Download to view</a>
                 </p>
               </iframe>
 
