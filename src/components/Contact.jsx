@@ -35,8 +35,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="contact" className="py-24 relative overflow-hidden bg-grid">
+      <div className="absolute inset-0 bg-gradient-to-b from-dark via-transparent to-dark pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,8 +46,8 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Get In <span className="text-primary-cyan">Touch</span></h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-cyan mx-auto rounded-full mb-6"></div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Get In <span className="text-pcyan">Touch</span></h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-pblue to-pcyan mx-auto rounded-full mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
             I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>
@@ -64,22 +66,22 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
 
               <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="w-12 h-12 rounded-full bg-pblue/10 flex items-center justify-center text-pblue group-hover:bg-pblue group-hover:text-white transition-colors duration-300">
                   <Mail size={20} />
                 </div>
                 <div>
                   <h4 className="text-sm text-gray-400 font-medium">Email</h4>
-                  <a href="mailto:hanipathak8104@gmail.com" className="text-lg text-white hover:text-primary-cyan transition-colors">hanipathak8104@gmail.com</a>
+                  <a href="mailto:hanipathak8104@gmail.com" className="text-lg text-white hover:text-pcyan transition-colors">hanipathak8104@gmail.com</a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-primary-cyan/10 flex items-center justify-center text-primary-cyan group-hover:bg-primary-cyan group-hover:text-white transition-colors duration-300">
+                <div className="w-12 h-12 rounded-full bg-pcyan/10 flex items-center justify-center text-pcyan group-hover:bg-pcyan group-hover:text-white transition-colors duration-300">
                   <Phone size={20} />
                 </div>
                 <div>
                   <h4 className="text-sm text-gray-400 font-medium">Phone</h4>
-                  <a href="tel:+917568498022" className="text-lg text-white hover:text-primary-cyan transition-colors">+91 7568498022</a>
+                  <a href="tel:+917568498022" className="text-lg text-white hover:text-pcyan transition-colors">+91 7568498022</a>
                 </div>
               </div>
 
@@ -99,7 +101,7 @@ const Contact = () => {
                   href="https://github.com/hani8104"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-dark-lighter flex items-center justify-center border border-white/10 hover:border-primary hover:text-primary transition-all hover:-translate-y-1"
+                  className="w-10 h-10 rounded-full bg-dlighter flex items-center justify-center border border-white/10 hover:border-pblue hover:text-pblue transition-all hover:-translate-y-1"
                 >
                   <FaGithub size={20} />
                 </a>
@@ -107,7 +109,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/hani-pathak-a756111a0/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-dark-lighter flex items-center justify-center border border-white/10 hover:border-primary-cyan hover:text-primary-cyan transition-all hover:-translate-y-1"
+                  className="w-10 h-10 rounded-full bg-dlighter flex items-center justify-center border border-white/10 hover:border-pcyan hover:text-pcyan transition-all hover:-translate-y-1"
                   title="LinkedIn"
                 >
                   <FaLinkedin size={24} />
@@ -116,7 +118,7 @@ const Contact = () => {
                   href="https://www.instagram.com/honeypathak007?igsh=bHAzdXJucDJwc2Fq" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-dark-lighter flex items-center justify-center border border-white/10 hover:border-pink-500 hover:text-pink-500 transition-all hover:-translate-y-1"
+                  className="w-10 h-10 rounded-full bg-dlighter flex items-center justify-center border border-white/10 hover:border-pink-500 hover:text-pink-500 transition-all hover:-translate-y-1"
                   title="Instagram"
                 >
                   <FaInstagram size={24} />
@@ -131,8 +133,9 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="h-full"
           >
-            <form onSubmit={handleSubmit} className="glass p-8 rounded-2xl border border-white/5 space-y-6 relative overflow-hidden">
+            <form onSubmit={handleSubmit} className="glass-premium p-10 rounded-3xl border border-white/10 space-y-8 relative overflow-hidden h-full shadow-2xl">
               <AnimatePresence>
                 {status === 'success' && (
                   <motion.div 
@@ -170,7 +173,7 @@ const Contact = () => {
                     <p className="text-gray-300 text-sm">Something went wrong. Please try again or email me directly.</p>
                     <button 
                       onClick={() => setStatus('idle')}
-                      className="mt-4 text-sm text-primary-cyan hover:underline"
+                      className="mt-4 text-sm text-pcyan hover:underline"
                     >
                       Try again
                     </button>
@@ -179,40 +182,40 @@ const Contact = () => {
               </AnimatePresence>
 
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                <label htmlFor="name" className="block text-sm font-bold text-white mb-3 uppercase tracking-wider">Your Name</label>
                 <input
                   type="text"
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-dark-lighter/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-500"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-pcyan focus:ring-1 focus:ring-pcyan transition-all placeholder-gray-500 font-medium"
                   placeholder="John Doe"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
+                <label htmlFor="email" className="block text-sm font-bold text-white mb-3 uppercase tracking-wider">Your Email</label>
                 <input
                   type="email"
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-dark-lighter/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-500"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-pcyan focus:ring-1 focus:ring-pcyan transition-all placeholder-gray-500 font-medium"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-bold text-white mb-3 uppercase tracking-wider">Message</label>
                 <textarea
                   id="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows="4"
-                  className="w-full bg-dark-lighter/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-500 resize-none"
+                  rows="5"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-pcyan focus:ring-1 focus:ring-pcyan transition-all placeholder-gray-500 resize-none font-medium"
                   placeholder="Hi Hani, I'd like to talk about..."
                 ></textarea>
               </div>
@@ -223,7 +226,7 @@ const Contact = () => {
                 className={`w-full py-3 px-6 rounded-lg text-white font-medium flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 ${
                   status === 'loading' 
                   ? 'bg-gray-600 cursor-not-allowed opacity-70' 
-                  : 'bg-gradient-to-r from-primary to-primary-cyan hover:shadow-[0_0_20px_rgba(79,70,229,0.4)]'
+                  : 'bg-gradient-to-r from-pblue to-pcyan hover:shadow-[0_0_20px_rgba(79,70,229,0.4)]'
                 }`}
               >
                 {status === 'loading' ? (

@@ -30,8 +30,8 @@ const Navbar = () => {
         {/* Logo */}
         <div className="text-2xl font-bold tracking-tighter">
           <Link to="home" smooth={true} duration={500} className="cursor-pointer flex items-center gap-1 group">
-            <span className="text-white">HP</span>
-            <span className="text-primary-cyan text-3xl leading-none">.</span>
+            <span className="text-white group-hover:text-pcyan transition-colors">Hani</span>
+            <span className="text-pcyan">Pathak.</span>
           </Link>
         </div>
 
@@ -42,11 +42,11 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               spy={true}
-              activeClass="text-primary-cyan font-semibold border-b-2 border-primary-cyan"
+              activeClass="text-pcyan font-semibold border-b-2 border-pcyan"
               smooth={true}
               offset={-70}
               duration={500}
-              className="cursor-pointer text-gray-300 hover:text-white transition-colors py-1 text-sm uppercase tracking-wider relative"
+              className="cursor-pointer text-gray-300 hover:text-pcyan transition-colors py-1 text-sm uppercase tracking-wider relative"
             >
               {link.name}
             </Link>
@@ -56,7 +56,7 @@ const Navbar = () => {
               href="https://github.com/hani8104" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-gray-400 hover:text-pcyan transition-all transform hover:scale-110"
               title="GitHub"
             >
               <FaGithub size={18} />
@@ -65,7 +65,7 @@ const Navbar = () => {
               href="https://www.linkedin.com/in/hani-pathak-a756111a0/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition-colors"
+              className="text-gray-400 hover:text-pcyan transition-all transform hover:scale-110"
               title="LinkedIn"
             >
               <FaLinkedin size={18} />
@@ -74,7 +74,7 @@ const Navbar = () => {
               href="https://www.instagram.com/honeypathak007?igsh=bHAzdXJucDJwc2Fq" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-pink-500 transition-colors"
+              className="text-gray-400 hover:text-pcyan transition-all transform hover:scale-110"
               title="Instagram"
             >
               <FaInstagram size={18} />
@@ -86,7 +86,7 @@ const Navbar = () => {
             smooth={true} 
             duration={500} 
             offset={-70}
-            className="ml-4 px-5 py-2 rounded-full border border-primary/50 hover:border-primary-cyan text-sm font-medium transition-all hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] bg-primary/10 cursor-pointer"
+            className="ml-4 px-5 py-2 rounded-full border border-pcyan/50 hover:border-pcyan text-sm font-medium transition-all hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] bg-pcyan/10 text-pcyan cursor-pointer"
           >
             Hire Me
           </Link>
@@ -112,7 +112,7 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 spy={true}
-                activeClass="text-primary-cyan font-semibold"
+                activeClass="text-pcyan font-semibold"
                 smooth={true}
                 offset={-70}
                 duration={500}

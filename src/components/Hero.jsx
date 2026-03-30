@@ -20,7 +20,7 @@ const Hero = ({ onOpenResume }) => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="relative w-16 h-16 md:w-20 md:h-20 rounded-full p-1 bg-gradient-to-tr from-primary to-primary-cyan shadow-lg shadow-primary/20 overflow-hidden"
+              className="relative w-16 h-16 md:w-20 md:h-20 rounded-full p-1 bg-gradient-to-tr from-pblue to-pcyan shadow-lg shadow-pblue/20 overflow-hidden"
             >
               <img 
                 src="/profile.png" 
@@ -32,7 +32,7 @@ const Hero = ({ onOpenResume }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-block py-1 px-3 rounded-full border border-primary/30 bg-primary/10 text-primary-cyan text-sm font-medium tracking-wide font-mono self-end mb-2"
+              className="inline-block py-1 px-3 rounded-full border border-pblue/30 bg-pblue/10 text-pcyan text-sm font-medium tracking-wide font-mono self-end mb-2"
             >
               Available for Projects
             </motion.div>
@@ -57,7 +57,7 @@ const Hero = ({ onOpenResume }) => {
               smooth={true} 
               offset={-70} 
               duration={500}
-              className="cursor-pointer group relative px-6 py-3 bg-gradient-to-r from-primary to-primary-cyan rounded-lg text-white font-medium flex items-center gap-2 overflow-hidden shadow-lg shadow-primary/25 hover:shadow-primary-cyan/40 transition-all"
+              className="cursor-pointer group relative px-6 py-3 bg-gradient-to-r from-pblue to-pcyan rounded-lg text-white font-medium flex items-center gap-2 overflow-hidden shadow-lg shadow-pblue/25 hover:shadow-pcyan/40 transition-all"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
               <span className="relative z-10 flex items-center gap-2">
@@ -70,7 +70,7 @@ const Hero = ({ onOpenResume }) => {
               <a 
                 href="/resume.pdf" 
                 download="Hani_Pathak_Resume.pdf"
-                className="group px-6 py-3 bg-white/5 hover:bg-white/10 rounded-lg border border-gray-700 hover:border-primary-cyan text-white font-medium flex items-center gap-2 transition-all shadow-lg"
+                className="group px-6 py-3 bg-white/5 hover:bg-white/10 rounded-lg border border-gray-700 hover:border-pcyan text-white font-medium flex items-center gap-2 transition-all shadow-lg"
               >
                 <span>Download Resume</span>
                 <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
@@ -78,7 +78,7 @@ const Hero = ({ onOpenResume }) => {
               
               <button 
                 onClick={onOpenResume}
-                className="group px-6 py-3 bg-white/5 hover:bg-white/10 rounded-lg border border-gray-700 hover:border-primary-cyan text-gray-400 hover:text-primary-cyan font-medium flex items-center gap-2 transition-all shadow-lg"
+                className="group px-6 py-3 bg-white/5 hover:bg-white/10 rounded-lg border border-gray-700 hover:border-pcyan text-gray-400 hover:text-pcyan font-medium flex items-center gap-2 transition-all shadow-lg"
                 title="View Resume"
               >
                 <span>View</span>
@@ -123,57 +123,66 @@ const Hero = ({ onOpenResume }) => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="order-1 md:order-2 flex justify-center items-center relative"
+          className="order-1 md:order-2 flex justify-center items-center relative py-10 md:py-0"
         >
           {/* Decorative glowing circles behind the image */}
-          <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full w-full h-full -z-10"></div>
+          <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full w-full h-full -z-10"></div>
           
           {/* Abstract Code Illustration / Developer Graphic */}
-          <div className="relative w-full aspect-square max-w-md">
+          <div className="relative w-full aspect-square max-w-md group">
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="absolute inset-0 rounded-2xl glass p-6 overflow-hidden border border-white/10 shadow-2xl"
+              className="absolute inset-0 rounded-2xl glass-premium p-6 overflow-hidden border border-white/10 shadow-2xl backdrop-blur-2xl"
             >
-              <div className="flex gap-2 mb-4">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              <div className="flex gap-2 mb-6">
+                <div className="w-3 h-3 rounded-full bg-red-500/80 shadow-lg shadow-red-500/20"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-400/80 shadow-lg shadow-yellow-400/20"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-lg shadow-green-500/20"></div>
               </div>
-              <div className="space-y-4 font-mono text-xs md:text-sm">
-                <div className="text-purple-400"><span className="text-pink-500">const</span> developer = {'{'}</div>
-                <div className="pl-4 text-blue-300">name: <span className="text-green-300">'Hani Pathak'</span>,</div>
-                <div className="pl-4 text-blue-300">stack: <span className="text-green-300">'MERN'</span>,</div>
-                <div className="pl-4 text-blue-300">skills: [<span className="text-green-300">'React'</span>, <span className="text-green-300">'Node.js'</span>, <span className="text-green-300">'MongoDB'</span>],</div>
-                <div className="pl-4 text-blue-300">passion: <span className="text-green-300">'Building awesome UI'</span></div>
+              <div className="space-y-4 font-mono text-xs md:text-sm leading-relaxed">
+                <div className="text-purple-400"><span className="text-pink-500 italic">const</span> <span className="text-blue-400">developer</span> = {'{'}</div>
+                <div className="pl-4 text-blue-300">name: <span className="text-amber-300">'Hani Pathak'</span>,</div>
+                <div className="pl-4 text-blue-300">stack: <span className="text-amber-300">'MERN'</span>,</div>
+                <div className="pl-4 text-blue-300">skills: [<span className="text-amber-300">'React'</span>, <span className="text-amber-300">'Node.js'</span>, <span className="text-amber-300">'MongoDB'</span>],</div>
+                <div className="pl-4 text-blue-300">passion: <span className="text-amber-300">'Building awesome UI'</span></div>
                 <div className="text-purple-400">{'}'};</div>
                 <br/>
-                <div className="text-gray-400">// Keep coding, keep building</div>
+                <div className="text-gray-500 italic font-light">// Keep coding, keep building...</div>
                 <motion.div 
                   animate={{ opacity: [0, 1, 0] }}
-                  transition={{ repeat: Infinity, duration: 1 }}
-                  className="w-2 h-4 bg-primary-cyan inline-block align-middle ml-1"
+                  transition={{ repeat: Infinity, duration: 0.8 }}
+                  className="w-2 h-5 bg-pcyan inline-block align-middle ml-1"
                 ></motion.div>
               </div>
             </motion.div>
             
             {/* Floating UI Elements */}
             <motion.div 
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
-              className="absolute -right-8 top-12 glass p-3 rounded-xl border border-white/10 flex items-center gap-3 backdrop-blur-xl"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -right-6 top-10 glass p-3 rounded-xl border border-white/10 flex items-center gap-3 shadow-xl z-20"
             >
-              <div className="w-8 h-8 rounded bg-blue-500/20 flex items-center justify-center">⚛️</div>
-              <div className="text-sm font-semibold">React.js</div>
+              <div className="w-8 h-8 rounded bg-blue-500/20 flex items-center justify-center text-xl">⚛️</div>
+              <div className="text-xs font-bold tracking-tight">React.js</div>
             </motion.div>
             
             <motion.div 
-              animate={{ x: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 2 }}
-              className="absolute -left-6 bottom-20 glass p-3 rounded-xl border border-white/10 flex items-center gap-3 backdrop-blur-xl"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+              className="absolute -left-10 md:-left-12 top-1/2 glass p-3 rounded-xl border border-white/10 flex items-center gap-3 shadow-xl z-20"
             >
-              <div className="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center text-green-400 font-bold">M</div>
-              <div className="text-sm font-semibold">MongoDB</div>
+              <div className="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center text-green-400 font-bold text-xl">M</div>
+              <div className="text-xs font-bold tracking-tight">MongoDB</div>
+            </motion.div>
+
+            <motion.div 
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut", delay: 2 }}
+              className="absolute right-10 -bottom-6 glass p-3 rounded-xl border border-white/10 flex items-center gap-3 shadow-xl z-20"
+            >
+              <div className="w-8 h-8 rounded bg-green-600/20 flex items-center justify-center text-xl">🟢</div>
+              <div className="text-xs font-bold tracking-tight">Node.js</div>
             </motion.div>
           </div>
         </motion.div>

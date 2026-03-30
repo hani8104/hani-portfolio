@@ -7,21 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        dark: {
-          DEFAULT: '#0F172A',
-          lighter: '#1E293B',
-          card: 'rgba(30, 41, 59, 0.7)'
-        },
-        primary: {
-          DEFAULT: '#4F46E5', // Indigo
-          cyan: '#06B6D4' // Cyan map
-        }
+        'dark': '#0F172A',
+        'dlighter': '#1E293B',
+        'pblue': '#4F46E5',
+        'pcyan': '#06B6D4',
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(to right, var(--tw-gradient-stops))',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       }
     },
   },

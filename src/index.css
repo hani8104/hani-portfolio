@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #4F46E5;
+  --primary-glow: rgba(79, 70, 229, 0.4);
+  --cyan: #06B6D4;
+  --dark: #0F172A;
+  --dark-lighter: #1E293B;
+  --white: #F8FAFC;
+}
 
 @layer base {
   html {
@@ -8,32 +19,60 @@
   }
   
   body {
-    @apply bg-dark text-white font-sans overflow-x-hidden;
-    background-color: #0F172A; /* Fallback */
+    @apply bg-dark text-white font-sans antialiased overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+    background-color: #0F172A;
   }
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
     background: #0F172A; 
   }
   ::-webkit-scrollbar-thumb {
-    background: #4F46E5; 
-    border-radius: 4px;
+    background: #1E293B; 
+    border-radius: 10px;
+    transition: all 0.3s ease;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #06B6D4; 
+    background: #4F46E5; 
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-dark-card backdrop-blur-md border border-white/10 shadow-lg;
+    @apply backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    background: rgba(30, 41, 59, 0.6);
+  }
+
+  .glass-premium {
+    @apply backdrop-blur-2xl border border-white/20 shadow-2xl;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
   }
   
   .text-gradient {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-cyan;
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#4F46E5] to-[#06B6D4];
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:border-white/20;
+  }
+
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
   }
 }

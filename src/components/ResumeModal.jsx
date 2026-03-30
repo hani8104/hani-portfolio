@@ -41,7 +41,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-5xl h-[85vh] bg-dark-lighter border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+            className="relative w-full max-w-5xl h-[85vh] bg-dlighter border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-white/5 bg-dark">
@@ -56,7 +56,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
                 <a
                   href="/resume.pdf"
                   download="Hani_Pathak_Resume.pdf"
-                  className="flex items-center gap-2 text-xs font-medium bg-primary/20 text-primary-cyan px-3 py-1.5 rounded-full hover:bg-primary/30 transition-colors"
+                  className="flex items-center gap-2 text-xs font-medium bg-pblue/20 text-pcyan px-3 py-1.5 rounded-full hover:bg-pblue/30 transition-colors"
                   title="Download PDF"
                 >
                   <Download size={14} />
@@ -86,7 +86,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
               </iframe>
 
               {/* Optional overlay for better look in some browsers */}
-              <div className="absolute inset-0 pointer-events-none border-[12px] border-dark-lighter opacity-50"></div>
+              <div className="absolute inset-0 pointer-events-none border-[12px] border-dlighter opacity-50"></div>
             </div>
 
             {/* Footer / Hint */}
