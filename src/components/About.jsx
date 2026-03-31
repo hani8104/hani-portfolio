@@ -186,23 +186,22 @@ const About = ({ onOpenResume }) => {
             >
               <button 
                 onClick={onOpenResume}
-                className="group relative px-8 py-4 bg-gradient-to-r from-pblue to-pcyan rounded-2xl text-white font-bold overflow-hidden shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_35px_rgba(6,182,212,0.5)] transition-all duration-300 transform active:scale-95"
+                className="group relative px-8 py-4 bg-gradient-to-r from-pblue to-pcyan rounded-2xl text-white font-bold overflow-hidden shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_35px_rgba(6,182,212,0.5)] transition-all duration-300 transform active:scale-95 flex items-center gap-3 justify-center"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                <span className="relative z-10 flex items-center gap-3">
-                  <FileUser size={22} className="group-hover:rotate-12 transition-transform" />
-                  View Detailed Resume 
-                  <Rocket size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </span>
+                <div className="relative z-10 flex items-center gap-3">
+                  <Eye size={22} className="group-hover:rotate-12 transition-transform" />
+                  <span>View Resume</span> 
+                </div>
               </button>
 
               <a 
-                href="/Resume.pdf" 
-                download="Hani_Pathak_Resume.pdf"
-                className="p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 hover:border-pcyan/50 text-white transition-all backdrop-blur-md flex items-center justify-center"
+                href="/Resume_Hani_Pathak.pdf" 
+                download="Resume_Hani_Pathak.pdf"
+                className="p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 hover:border-pcyan/50 text-white transition-all backdrop-blur-md flex items-center justify-center group/dl shadow-lg hover:shadow-pcyan/10"
                 title="Download Resume"
               >
-                <Rocket size={22} className="rotate-90 text-pcyan" />
+                <Download size={22} className="text-pcyan group-hover/dl:scale-110 transition-transform" />
               </a>
             </motion.div>
           </div>

@@ -149,19 +149,19 @@ const Hero = ({ onOpenResume }) => {
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <button 
                 onClick={onOpenResume}
-                className="flex-1 sm:flex-none px-6 py-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 hover:border-pcyan/50 text-white font-medium transition-all backdrop-blur-md flex items-center justify-center gap-2"
+                className="flex-1 sm:flex-none px-6 py-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 hover:border-pcyan/50 text-white font-medium transition-all backdrop-blur-md flex items-center justify-center gap-2 group/btn shadow-xl hover:shadow-pcyan/10"
               >
-                <Eye size={18} />
-                <span>View CV</span>
+                <Eye size={18} className="group-hover/btn:text-pcyan transition-colors" />
+                <span>View Resume</span>
               </button>
               
               <a 
-                href="/Resume.pdf" 
-                download="Hani_Pathak_Resume.pdf"
-                className="p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 hover:border-pcyan/50 text-white transition-all backdrop-blur-md flex items-center justify-center"
+                href="/Resume_Hani_Pathak.pdf" 
+                download="Resume_Hani_Pathak.pdf"
+                className="p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 hover:border-pcyan/50 text-white transition-all backdrop-blur-md flex items-center justify-center group/btn shadow-xl hover:shadow-pcyan/10"
                 title="Download Resume"
               >
-                <Download size={20} />
+                <Download size={20} className="group-hover/btn:text-pcyan transition-colors" />
               </a>
             </div>
           </div>
