@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
-import { Code, Server, Database, Layout, FileUser, Rocket, Cpu, Globe } from 'lucide-react';
+import { Code, Server, Database, Layout, FileUser, Rocket, Cpu, Globe, Eye, Download } from 'lucide-react';
 import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
 
 const StatItem = ({ count, label }) => (
