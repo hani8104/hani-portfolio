@@ -5,7 +5,7 @@ import { GraduationCap, Award } from 'lucide-react';
 const educationData = [
   {
     degree: "BCA (Bachelor of Computer Applications)",
-    institution: "Amity University, Jaipur",
+    institution: "Amity University, Noida Online",
     date: "2024 – Present",
     desc: "Currently pursuing a Bachelor's degree with a focus on core computer science foundations and software development."
   },
