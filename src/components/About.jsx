@@ -196,8 +196,8 @@ const About = ({ onOpenResume }) => {
               </button>
 
               <a 
-                href="/Resume_Hani_Pathak.pdf" 
-                download="Resume_Hani_Pathak.pdf"
+                href="/Hani_Pathak_Resume.pdf" 
+                download="Hani_Pathak_Resume.pdf"
                 className="p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 hover:border-pcyan/50 text-white transition-all backdrop-blur-md flex items-center justify-center group/dl shadow-lg hover:shadow-pcyan/10"
                 title="Download Resume"
               >

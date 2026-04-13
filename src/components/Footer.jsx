@@ -46,8 +46,8 @@ const Footer = () => {
               <FaInstagram size={20} />
             </a>
             <a 
-              href="/Resume_Hani_Pathak.pdf" 
-              download="Resume_Hani_Pathak.pdf"
+              href="/Hani_Pathak_Resume.pdf" 
+              download="Hani_Pathak_Resume.pdf"
               className="text-gray-400 hover:text-pcyan transition-all transform hover:scale-110"
               title="Download Resume"
             >

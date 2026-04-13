@@ -53,13 +53,13 @@ const ResumeModal = ({ isOpen, onClose }) => {
                   <div className="w-3 h-3 rounded-full bg-yellow-500/80 shadow-[0_0_8px_rgba(234,179,8,0.4)]"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-[0_0_8px_rgba(34,197,94,0.4)]"></div>
                 </div>
-                <span className="ml-2 text-xs font-medium text-gray-400 hidden sm:inline-block tracking-wide">Resume_Hani_Pathak.pdf</span>
+                <span className="ml-2 text-xs font-medium text-gray-400 hidden sm:inline-block tracking-wide">Hani_Pathak_Resume.pdf</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <a
-                  href="/Resume_Hani_Pathak.pdf"
-                  download="Resume_Hani_Pathak.pdf"
+                  href="/Hani_Pathak_Resume.pdf"
+                  download="Hani_Pathak_Resume.pdf"
                   className="flex items-center gap-2 text-xs font-semibold bg-gradient-to-r from-pblue to-pcyan text-white px-4 py-2 rounded-full hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all duration-300"
                   title="Download Resume"
                 >
@@ -81,7 +81,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
             <div className="flex-1 bg-black/40 relative overflow-hidden group">
               {!hasError ? (
                 <iframe
-                  src="/Resume_Hani_Pathak.pdf#toolbar=0"
+                  src="/Hani_Pathak_Resume.pdf#toolbar=0"
                   className="w-full h-full border-none"
                   title="Hani Pathak Resume"
                   onLoad={() => setHasError(false)}
@@ -90,7 +90,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
                   <div className="flex flex-col items-center justify-center h-full text-center p-8">
                     <p className="text-gray-400 mb-4 font-light">Your browser does not support PDF viewing.</p>
                     <a 
-                      href="/Resume_Hani_Pathak.pdf" 
+                      href="/Hani_Pathak_Resume.pdf" 
                       className="px-6 py-2 bg-pcyan/20 text-pcyan rounded-xl border border-pcyan/30 hover:bg-pcyan/30 transition-all font-medium"
                     >
                       Download to view
@@ -107,7 +107,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
                      We encountered an issue loading the PDF preview. Please try again later or download the file directly.
                    </p>
                    <a 
-                      href="/Resume_Hani_Pathak.pdf" 
+                      href="/Hani_Pathak_Resume.pdf" 
                       download
                       className="px-8 py-3 bg-gradient-to-r from-pblue to-pcyan text-white rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all font-bold"
                     >
