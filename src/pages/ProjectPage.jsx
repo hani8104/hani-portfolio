@@ -111,24 +111,28 @@ const ProjectPage = () => {
 
               {/* Action Buttons (Repetitive but good for UX) */}
               <div className="mt-12 flex flex-col sm:flex-row gap-4">
-                <a 
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-3 px-8 py-5 bg-gradient-to-r from-pblue to-pcyan rounded-2xl text-white font-bold hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transform hover:-translate-y-1 transition-all text-center"
-                >
-                  <Globe size={20} className="shrink-0" />
-                  <span>Interactive Live Demo</span>
-                </a>
-                <a 
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 sm:flex-none flex items-center justify-center gap-3 px-8 py-5 bg-white/5 text-white border border-white/10 rounded-2xl font-bold hover:bg-white/10 hover:border-white/20 transform hover:-translate-y-1 transition-all text-center"
-                >
-                  <FaGithub size={22} className="shrink-0" />
-                  <span>Repository</span>
-                </a>
+                {project.liveLink && project.liveLink !== "#" && (
+                  <a 
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-3 px-8 py-5 bg-gradient-to-r from-pblue to-pcyan rounded-2xl text-white font-bold hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transform hover:-translate-y-1 transition-all text-center"
+                  >
+                    <Globe size={20} className="shrink-0" />
+                    <span>{project.liveLinkLabel || "Interactive Live Demo"}</span>
+                  </a>
+                )}
+                {project.githubLink && (
+                  <a 
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 sm:flex-none flex items-center justify-center gap-3 px-8 py-5 bg-white/5 text-white border border-white/10 rounded-2xl font-bold hover:bg-white/10 hover:border-white/20 transform hover:-translate-y-1 transition-all text-center"
+                  >
+                    <FaGithub size={22} className="shrink-0" />
+                    <span>Repository</span>
+                  </a>
+                )}
               </div>
             </motion.div>
 
